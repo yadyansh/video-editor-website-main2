@@ -17,13 +17,7 @@ export default function Hero() {
         
         {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" 
-            style={{
-              backgroundImage: `linear-gradient(rgba(74, 158, 255, 0.1) 1px, transparent 1px),
-                               linear-gradient(90deg, rgba(74, 158, 255, 0.1) 1px, transparent 1px)`,
-              backgroundSize: '100px 100px'
-            }}
-          />
+          <div className="absolute inset-0 grid-pattern" />
         </div>
 
         {/* Animated Glow */}

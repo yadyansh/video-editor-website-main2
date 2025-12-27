@@ -18,15 +18,17 @@
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
   .glow-text {
     text-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
   }
   
   .cinematic-gradient {
     background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 50%, #0a0a0a 100%);
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(rgba(74, 158, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(74, 158, 255, 0.1) 1px, transparent 1px);
+    background-size: 100px 100px;
   }
 }
