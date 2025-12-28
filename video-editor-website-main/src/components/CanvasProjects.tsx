@@ -20,13 +20,6 @@ const projectVideos = [
     icon: <Video className="h-10 w-10" />
   },
   { 
-    title: "Task 12", 
-    video: "/videos/task12.mp4",
-    description: "Cinematic short film with color grading",
-    color: "sky",
-    icon: <Scissors className="h-10 w-10" />
-  },
-  { 
     title: "Day 1 Editor", 
     video: "/videos/day1-editor.mp4",
     description: "Editing showcase reel with various styles",
@@ -55,7 +48,7 @@ export default function CanvasProjects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 max-w-sm sm:max-w-none mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-sm sm:max-w-none mx-auto">
           {projectVideos.map((project, index) => (
             <Card 
               key={project.title}
