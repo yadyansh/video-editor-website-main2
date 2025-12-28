@@ -124,6 +124,8 @@ export const ProductCard = ({
   };
   translate: MotionValue<number>;
 }) => {
+  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
+
   return (
     <motion.div
       style={{
@@ -135,23 +137,27 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative flex-shrink-0"
     >
-      <Link
-        href={product.link}
-        className="block group-hover/product:shadow-2xl"
-      >
+      <div className="block group-hover/product:shadow-2xl h-full w-full rounded-xl overflow-hidden bg-cinematic-gray">
         <video
           src={product.thumbnail}
-          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-xl"
+          className="object-cover object-center h-full w-full"
           autoPlay
           loop
           muted
           playsInline
+          onLoadedData={() => setIsVideoLoaded(true)}
         />
-      </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-xl"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-xl font-semibold">
+        {!isVideoLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center bg-cinematic-dark">
+            <div className="text-gray-400">Loading...</div>
+          </div>
+        )}
+      </div>
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-xl transition-opacity duration-300"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-xl font-semibold transition-opacity duration-300">
         {product.title}
       </h2>
     </motion.div>
   );
 };
+
