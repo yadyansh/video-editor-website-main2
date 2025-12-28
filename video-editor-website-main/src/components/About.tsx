@@ -18,6 +18,14 @@ export default function About() {
     }
   };
 
+  const handleVideoLoad = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Video autoplay prevented:", error);
+      });
+    }
+  };
+
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-dark relative overflow-hidden">
       {/* Background Accent */}
@@ -34,7 +42,8 @@ export default function About() {
           >
             <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
               {/* Video */}
-              <video
+              <vonLoadedData={handleVideoLoad}
+                ideo
                 ref={videoRef}
                 src="/videos/day1-editor.mp4"
                 autoPlay
