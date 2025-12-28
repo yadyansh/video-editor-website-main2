@@ -55,9 +55,9 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Transforming Footage Into
+              Hi, I&apos;m Yadyansh
               <span className="block bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">
-                Visual Narratives
+                a Video Editor
               </span>
             </motion.h2>
 
@@ -68,19 +68,30 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p>
-                From <span className="text-accent-gold font-semibold">cinematic edits</span> to high-performance digital content, 
-                I transform raw footage into compelling visual narratives.
+                I edit <span className="text-accent-gold font-semibold">Instagram Reels, YouTube Shorts</span>, and long-form videos (3–10 min) with clean cuts, strong pacing, beat-sync transitions, captions/subtitles, text animations, background music, sound effects, and basic color correction.
               </p>
               
               <p>
-                My work focuses on <span className="text-white font-medium">pacing, color science, and seamless transitions</span> — ensuring 
-                every project feels polished, immersive, and purpose-driven.
+                <span className="text-white font-medium">Tools I use:</span> Canva, CapCut &amp; DaVinci Resolve.
+                <br />
+                I focus on <span className="text-accent-blue font-semibold">clean, engaging edits</span> with quick turnaround.
               </p>
               
               <p>
-                Whether it&apos;s a <span className="text-accent-blue font-semibold">YouTube film, commercial, short-form content</span>, or branded storytelling, 
-                I approach every edit with a <span className="text-accent-gold">filmmaker&apos;s mindset</span> — crafting visuals that connect, engage, and elevate your message.
+                Happy to share samples or do a test edit if needed. 😊
               </p>
+
+              <div className="flex flex-col gap-3 mt-6 p-6 bg-cinematic-dark border border-cinematic-light rounded-xl">
+                <p className="text-white font-medium">
+                  📞 Phone: <a href="tel:9350955622" className="text-accent-blue hover:text-accent-gold transition-colors">9350955622</a>
+                </p>
+                <p className="text-white font-medium">
+                  📧 Email: <a href="mailto:growwitheditor@gmail.com" className="text-accent-blue hover:text-accent-gold transition-colors">growwitheditor@gmail.com</a>
+                </p>
+                <p className="text-accent-gold font-semibold mt-2">
+                  Looking forward to working together!
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
