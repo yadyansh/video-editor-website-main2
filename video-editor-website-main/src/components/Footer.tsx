@@ -10,26 +10,14 @@ export default function Footer() {
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/yourusername",
+      url: "https://www.instagram.com/grow.witheditor?igsh=bDdxZWVmazl0cmE5",
       color: "hover:text-pink-500"
-    },
-    {
-      name: "YouTube",
-      icon: Youtube,
-      url: "https://youtube.com/@yourchannel",
-      color: "hover:text-red-500"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://www.linkedin.com/in/yadyansh-garg-2b1654376",
       color: "hover:text-blue-500"
-    },
-    {
-      name: "Twitter/X",
-      icon: Twitter,
-      url: "https://twitter.com/yourusername",
-      color: "hover:text-blue-400"
     }
   ];
 

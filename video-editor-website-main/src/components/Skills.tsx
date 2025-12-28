@@ -35,12 +35,14 @@ export default function Skills() {
 const VideoHeader = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-600">
     <video
+      key="/videos/day1-editor.mp4"
       src="/videos/day1-editor.mp4"
       className="object-cover w-full h-full opacity-80"
       autoPlay
       loop
       muted
       playsInline
+      preload="auto"
     />
   </div>
 );

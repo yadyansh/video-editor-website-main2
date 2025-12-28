@@ -139,12 +139,14 @@ export const ProductCard = ({
     >
       <div className="block group-hover/product:shadow-2xl h-full w-full rounded-xl overflow-hidden bg-cinematic-gray">
         <video
+          key={product.thumbnail}
           src={product.thumbnail}
           className="object-cover object-center h-full w-full"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           onLoadedData={() => setIsVideoLoaded(true)}
         />
         {!isVideoLoaded && (
