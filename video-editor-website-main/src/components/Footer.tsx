@@ -31,10 +31,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-cinematic-black border-t border-cinematic-light py-12">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <footer className="bg-cinematic-black border-t border-cinematic-light py-8 sm:py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-10 md:mb-12">
           {/* Brand Section */}
           <div>
             <motion.h3 

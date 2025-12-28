@@ -43,32 +43,32 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-cinematic-black relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-black relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent-blue rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-gold rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight">
             What I <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Do</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4 font-normal leading-relaxed">
             Video editing services for content creators and businesses
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -77,19 +77,19 @@ export default function Services() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="h-full p-8 bg-cinematic-dark border border-cinematic-light rounded-2xl hover:border-accent-blue/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,158,255,0.15)]">
+              <div className="h-full p-6 sm:p-8 bg-cinematic-dark border border-cinematic-light rounded-2xl hover:border-accent-blue/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(74,158,255,0.15)]">
                 {/* Icon */}
-                <div className="w-14 h-14 mb-6 rounded-xl bg-accent-blue/10 flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors duration-300">
-                  <service.icon className="w-7 h-7 text-accent-blue" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mb-4 sm:mb-6 rounded-xl bg-accent-blue/10 flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors duration-300">
+                  <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent-blue" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-accent-blue transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-accent-blue transition-colors duration-300">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
                   {service.description}
                 </p>
 

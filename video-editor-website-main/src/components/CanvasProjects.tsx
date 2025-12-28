@@ -14,23 +14,23 @@ export default function CanvasProjects() {
   const [selectedVideo, setSelectedVideo] = useState<{ title: string; video: string } | null>(null);
 
   return (
-    <section id="canvas-projects" className="py-20 bg-cinematic-black">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="canvas-projects" className="py-12 sm:py-16 md:py-20 bg-cinematic-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight">
             My <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Hover over each card to see the magic
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4">
+            <span className="hidden sm:inline">Hover over</span><span className="sm:hidden">Tap</span> each card to see the magic
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-4 sm:gap-6">
           <Card 
             title="Saksham - YouTube Video" 
             icon={<Film className="h-10 w-10" />}
@@ -127,7 +127,8 @@ const Card = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
-      className="border border-white/[0.2] group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative h-[30rem] cursor-pointer"
+      onTouchStart={() => setHovered(true)}
+      className="border border-white/[0.2] group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative h-[20rem] sm:h-[25rem] md:h-[30rem] cursor-pointer"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />

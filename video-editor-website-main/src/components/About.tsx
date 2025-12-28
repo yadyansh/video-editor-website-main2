@@ -9,12 +9,12 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 sm:py-32 bg-cinematic-dark relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-dark relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent-blue/5 to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -50,7 +50,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h2 
-              className="text-4xl sm:text-5xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -62,7 +62,7 @@ export default function About() {
             </motion.h2>
 
             <motion.div 
-              className="space-y-5 text-gray-300 text-lg font-normal leading-relaxed"
+              className="space-y-4 sm:space-y-5 text-gray-300 text-base sm:text-lg font-normal leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -81,11 +81,11 @@ export default function About() {
                 Quick turnaround. Happy to share samples or do a test edit.
               </p>
 
-              <div className="flex flex-col gap-3 mt-6 p-6 bg-cinematic-light/50 border border-cinematic-light rounded-xl">
-                <p className="text-white font-medium text-base">
+              <div className="flex flex-col gap-3 mt-6 p-4 sm:p-6 bg-cinematic-light/50 border border-cinematic-light rounded-xl">
+                <p className="text-white font-medium text-sm sm:text-base">
                   📞 <a href="tel:9350955622" className="text-accent-blue hover:text-accent-gold transition-colors">9350955622</a>
                 </p>
-                <p className="text-white font-medium text-base">
+                <p className="text-white font-medium text-sm sm:text-base break-all">
                   📧 <a href="mailto:growwitheditor@gmail.com" className="text-accent-blue hover:text-accent-gold transition-colors">growwitheditor@gmail.com</a>
                 </p>
               </div>

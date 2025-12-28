@@ -83,7 +83,7 @@ export const products = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="bg-cinematic-dark relative overflow-hidden">
+    <section id="portfolio" className="bg-cinematic-dark relative overflow-hidden hidden lg:block">
       <HeroParallax products={products} />
     </section>
   );
