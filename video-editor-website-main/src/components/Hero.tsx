@@ -57,27 +57,27 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
-              Crafting Visual Stories
+            <span className="text-white font-extrabold">
+              Video Editing
             </span>
             <br />
-            <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">
-              That Leave an Impact
+            <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent font-extrabold">
+              That Works
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto font-normal leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I&apos;m a professional video editor specializing in cinematic storytelling and high-end post-production using <span className="text-accent-gold font-semibold">DaVinci Resolve</span>.
+            I edit videos for YouTube, Instagram, and brands. Clean cuts, good pacing, and quick turnaround.
             <br />
             Every frame is designed with intention — blending emotion, rhythm, and precision to create visuals that truly resonate.
           </motion.p>

@@ -9,32 +9,32 @@ const services = [
   {
     icon: Film,
     title: "Video Editing",
-    description: "Professional editing for YouTube, Instagram Reels, short films, and commercial content with precise cuts and pacing.",
-    features: ["YouTube Videos", "Short Films", "Commercial Ads", "Documentary Style"]
+    description: "YouTube videos, Instagram Reels, and short-form content. Clean cuts, good pacing.",
+    features: ["YouTube Videos", "Instagram Reels", "Short Films", "Commercial Ads"]
   },
   {
     icon: Palette,
     title: "Thumbnail Design",
-    description: "Eye-catching thumbnail designs that boost click-through rates and attract viewers to your content.",
-    features: ["YouTube Thumbnails", "Custom Graphics", "Brand Consistent", "High CTR Designs"]
+    description: "Custom thumbnails for YouTube that get clicks.",
+    features: ["YouTube Thumbnails", "Custom Graphics", "Quick Delivery", "Revision Included"]
   },
   {
     icon: Sparkles,
     title: "Motion Graphics",
-    description: "Eye-catching motion graphics, titles, and visual effects that enhance storytelling and brand identity.",
-    features: ["Animated Titles", "Lower Thirds", "Transitions", "Visual Effects"]
+    description: "Animated text, titles, and simple effects.",
+    features: ["Animated Titles", "Lower Thirds", "Text Effects", "Simple VFX"]
   },
   {
     icon: Share2,
     title: "Social Media Content",
-    description: "Optimized vertical and horizontal edits designed for maximum engagement on social platforms.",
-    features: ["Instagram Reels", "TikTok Videos", "YouTube Shorts", "LinkedIn Posts"]
+    description: "Vertical and horizontal edits for social platforms.",
+    features: ["Instagram Reels", "TikTok Videos", "YouTube Shorts", "LinkedIn Videos"]
   },
   {
     icon: Zap,
-    title: "Cinematic Transitions",
-    description: "Smooth, creative transitions that maintain flow and elevate production value without being distracting.",
-    features: ["Match Cuts", "Speed Ramps", "Creative Wipes", "Seamless Flow"]
+    title: "Transitions",
+    description: "Smooth transitions and effects that keep the flow going.",
+    features: ["Beat Sync", "Speed Ramps", "Smooth Cuts", "Creative Wipes"]
   },
 ];
 
@@ -59,11 +59,11 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            What I <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Offer</span>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
+            What I <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Do</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive video editing services tailored to bring your vision to life with cinematic quality
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Video editing services for content creators and businesses
           </p>
         </motion.div>
 

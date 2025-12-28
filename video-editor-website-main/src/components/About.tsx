@@ -62,34 +62,31 @@ export default function About() {
             </motion.h2>
 
             <motion.div 
-              className="space-y-5 text-gray-400 text-lg"
+              className="space-y-5 text-gray-300 text-lg font-normal leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p>
-                I edit <span className="text-accent-gold font-semibold">Instagram Reels, YouTube Shorts</span>, and long-form videos (3–10 min) with clean cuts, strong pacing, beat-sync transitions, captions/subtitles, text animations, background music, sound effects, and basic color correction.
+                I edit Instagram Reels, YouTube Shorts, and videos up to 10 minutes. Fast cuts, good pacing, and beat-synced transitions.
               </p>
               
               <p>
-                <span className="text-white font-medium">Tools I use:</span> Canva, CapCut &amp; DaVinci Resolve.
+                <span className="text-white font-medium">Tools:</span> Canva, CapCut, DaVinci Resolve
                 <br />
-                I focus on <span className="text-accent-blue font-semibold">clean, engaging edits</span> with quick turnaround.
+                <span className="text-white font-medium">What I do:</span> Captions, text animations, music, sound effects, basic color correction
               </p>
               
               <p>
-                Happy to share samples or do a test edit if needed. 😊
+                Quick turnaround. Happy to share samples or do a test edit.
               </p>
 
-              <div className="flex flex-col gap-3 mt-6 p-6 bg-cinematic-dark border border-cinematic-light rounded-xl">
-                <p className="text-white font-medium">
-                  📞 Phone: <a href="tel:9350955622" className="text-accent-blue hover:text-accent-gold transition-colors">9350955622</a>
+              <div className="flex flex-col gap-3 mt-6 p-6 bg-cinematic-light/50 border border-cinematic-light rounded-xl">
+                <p className="text-white font-medium text-base">
+                  📞 <a href="tel:9350955622" className="text-accent-blue hover:text-accent-gold transition-colors">9350955622</a>
                 </p>
-                <p className="text-white font-medium">
-                  📧 Email: <a href="mailto:growwitheditor@gmail.com" className="text-accent-blue hover:text-accent-gold transition-colors">growwitheditor@gmail.com</a>
-                </p>
-                <p className="text-accent-gold font-semibold mt-2">
-                  Looking forward to working together!
+                <p className="text-white font-medium text-base">
+                  📧 <a href="mailto:growwitheditor@gmail.com" className="text-accent-blue hover:text-accent-gold transition-colors">growwitheditor@gmail.com</a>
                 </p>
               </div>
             </motion.div>
