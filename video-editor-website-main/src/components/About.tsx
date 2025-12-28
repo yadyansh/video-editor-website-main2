@@ -42,8 +42,7 @@ export default function About() {
           >
             <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
               {/* Video */}
-              <vonLoadedData={handleVideoLoad}
-                ideo
+              <video
                 ref={videoRef}
                 src="/videos/day1-editor.mp4"
                 autoPlay
@@ -51,6 +50,7 @@ export default function About() {
                 muted
                 playsInline
                 preload="auto"
+                onLoadedData={handleVideoLoad}
                 className="w-full h-full object-cover"
               />
               
