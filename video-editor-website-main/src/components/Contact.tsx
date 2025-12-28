@@ -32,7 +32,7 @@ export default function Contact() {
     "Music Video",
     "Short Film",
     "Social Media Content",
-    "Color Grading Only",
+    "Thumbnail Design",
     "Documentary",
     "Other"
   ];
@@ -297,10 +297,10 @@ export default function Contact() {
         >
           <p className="text-gray-500 mb-2">Prefer email?</p>
           <a 
-            href="mailto:editor@example.com" 
+            href="mailto:growwitheditor@gmail.com" 
             className="text-accent-blue hover:text-accent-gold transition-colors duration-300 text-lg font-medium"
           >
-            editor@example.com
+            growwitheditor@gmail.com
           </a>
         </motion.div>
       </div>

@@ -11,15 +11,15 @@ const portfolioItems = [
     title: "Cinematic Travel Film",
     category: "Short Film",
     thumbnail: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    description: "Epic travel montage with advanced color grading and dynamic transitions"
+    videoUrl: "", // Add your YouTube link here
+    description: "Epic travel montage with dynamic transitions and storytelling"
   },
   {
     id: 2,
     title: "Product Commercial",
     category: "Commercial",
     thumbnail: "https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "", // Add your YouTube link here
     description: "High-end product showcase with motion graphics and studio lighting"
   },
   {
@@ -27,23 +27,23 @@ const portfolioItems = [
     title: "Music Video Edit",
     category: "Music Video",
     thumbnail: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "", // Add your YouTube link here
     description: "Rhythmic editing synchronized with beat, creative visual effects"
   },
   {
     id: 4,
-    title: "Instagram Reel Series",
-    category: "Social Media",
-    thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    description: "Engaging vertical content optimized for social media platforms"
+    title: "Custom Thumbnail Designs",
+    category: "Thumbnail Design",
+    thumbnail: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop",
+    videoUrl: "", // Add your YouTube link here
+    description: "High-conversion thumbnail designs for YouTube content creators"
   },
   {
     id: 5,
     title: "Documentary Excerpt",
     category: "Documentary",
     thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "", // Add your YouTube link here
     description: "Emotional storytelling with interview cuts and b-roll integration"
   },
   {
@@ -51,12 +51,12 @@ const portfolioItems = [
     title: "YouTube Channel Intro",
     category: "YouTube",
     thumbnail: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=600&fit=crop",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "", // Add your YouTube link here
     description: "Branded intro sequence with custom motion graphics and logo reveal"
   },
 ];
 
-const categories = ["All", "Short Film", "Commercial", "Music Video", "Social Media", "Documentary", "YouTube"];
+const categories = ["All", "Short Film", "Commercial", "Music Video", "Thumbnail Design", "Documentary", "YouTube"];
 
 export default function Portfolio() {
   const ref = useRef(null);

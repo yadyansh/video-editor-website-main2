@@ -14,9 +14,9 @@ const services = [
   },
   {
     icon: Palette,
-    title: "Color Grading",
-    description: "Advanced color grading in DaVinci Resolve to create cinematic moods and establish visual consistency.",
-    features: ["Cinematic Look", "LUT Creation", "Mood Setting", "Brand Consistency"]
+    title: "Thumbnail Design",
+    description: "Eye-catching thumbnail designs that boost click-through rates and attract viewers to your content.",
+    features: ["YouTube Thumbnails", "Custom Graphics", "Brand Consistent", "High CTR Designs"]
   },
   {
     icon: Sparkles,
