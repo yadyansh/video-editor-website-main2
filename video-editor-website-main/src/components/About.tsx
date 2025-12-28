@@ -30,9 +30,9 @@ export default function About() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative max-w-md lg:max-w-none mx-auto lg:mx-0"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden relative group shadow-2xl border-2 border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
+            <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
               {/* Video */}
               <video
                 ref={videoRef}
@@ -48,32 +48,32 @@ export default function About() {
               {/* Video Overlay with Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-cinematic-black/80 via-transparent to-cinematic-black/40 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
               
-              {/* Mute Toggle Button */}
+              {/* Mute Toggle Button - Larger on mobile for touch */}
               <button
                 onClick={toggleMute}
-                className="absolute bottom-4 right-4 z-20 bg-cinematic-dark/80 hover:bg-accent-blue/90 backdrop-blur-sm p-3 rounded-full transition-all duration-300 border border-white/20 hover:border-accent-blue shadow-lg hover:scale-110 group/btn"
+                className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 bg-cinematic-dark/80 hover:bg-accent-blue/90 backdrop-blur-sm p-2.5 sm:p-3 rounded-full transition-all duration-300 border border-white/20 hover:border-accent-blue shadow-lg active:scale-95 sm:hover:scale-110 group/btn"
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
               >
                 {isMuted ? (
-                  <VolumeX className="w-5 h-5 text-white group-hover/btn:text-white" />
+                  <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 ) : (
-                  <Volume2 className="w-5 h-5 text-white group-hover/btn:text-white" />
+                  <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 )}
               </button>
 
-              {/* Play Indicator Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-accent-blue/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-white/20">
-                <Play className="w-4 h-4 text-white fill-white animate-pulse" />
-                <span className="text-white text-sm font-semibold">Showcase Reel</span>
+              {/* Play Indicator Badge - Responsive sizing */}
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 bg-accent-blue/90 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 shadow-lg border border-white/20">
+                <Play className="w-3 h-3 sm:w-4 sm:h-4 text-white fill-white animate-pulse" />
+                <span className="text-white text-xs sm:text-sm font-semibold">Showcase Reel</span>
               </div>
               
               {/* Glow Effect on Hover */}
               <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/30 to-accent-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
             
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-accent-gold/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent-blue/20 rounded-full blur-3xl" />
+            {/* Decorative Elements - Hidden on small mobile, subtle on larger screens */}
+            <div className="hidden sm:block absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 w-24 h-24 sm:w-40 sm:h-40 bg-accent-gold/20 rounded-full blur-2xl sm:blur-3xl animate-pulse" />
+            <div className="hidden sm:block absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-20 h-20 sm:w-32 sm:h-32 bg-accent-blue/20 rounded-full blur-2xl sm:blur-3xl" />
           </motion.div>
 
           {/* Content Side */}

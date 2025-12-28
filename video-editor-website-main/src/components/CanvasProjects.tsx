@@ -55,7 +55,7 @@ export default function CanvasProjects() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 max-w-sm sm:max-w-none mx-auto">
           {projectVideos.map((project, index) => (
             <Card 
               key={project.title}
@@ -96,7 +96,7 @@ export default function CanvasProjects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md"
+              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/95 backdrop-blur-md"
               onClick={() => setSelectedVideo(null)}
             >
               <motion.div
@@ -108,20 +108,21 @@ export default function CanvasProjects() {
               >
                 <button
                   onClick={() => setSelectedVideo(null)}
-                  className="absolute -top-12 right-0 text-white hover:text-accent-blue transition-colors z-10"
+                  className="absolute -top-10 sm:-top-12 right-0 text-white hover:text-accent-blue active:text-accent-blue transition-colors z-10 p-2 rounded-full bg-cinematic-dark/50 sm:bg-transparent"
                   aria-label="Close video"
                 >
-                  <X className="w-8 h-8" />
+                  <X className="w-6 h-6 sm:w-8 sm:h-8" />
                 </button>
-                <div className="bg-cinematic-dark rounded-2xl overflow-hidden border-2 border-accent-blue/30">
-                  <div className="p-4 sm:p-6 border-b border-cinematic-light">
-                    <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">{selectedVideo.title}</h3>
-                    <p className="text-gray-400 text-sm sm:text-base">{selectedVideo.description}</p>
+                <div className="bg-cinematic-dark rounded-xl sm:rounded-2xl overflow-hidden border border-accent-blue/30">
+                  <div className="p-3 sm:p-4 md:p-6 border-b border-cinematic-light">
+                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">{selectedVideo.title}</h3>
+                    <p className="text-gray-400 text-xs sm:text-sm md:text-base line-clamp-2">{selectedVideo.description}</p>
                   </div>
                   <video
                     src={selectedVideo.video}
                     controls
                     autoPlay
+                    playsInline
                     className="w-full aspect-video bg-black"
                   />
                 </div>
@@ -169,7 +170,7 @@ const Card = ({
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
       onTouchStart={() => setHovered(true)}
-      className="group border-2 border-white/[0.2] hover:border-accent-blue/50 rounded-2xl flex flex-col relative h-[280px] sm:h-[300px] cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-accent-blue/20"
+      className="group border border-white/[0.2] hover:border-accent-blue/50 active:border-accent-blue rounded-xl sm:rounded-2xl flex flex-col relative h-[260px] sm:h-[280px] lg:h-[300px] cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-accent-blue/20 active:scale-[0.98] sm:active:scale-100"
     >
       {/* Background Canvas Effect */}
       <AnimatePresence>
@@ -186,38 +187,38 @@ const Card = ({
       </AnimatePresence>
 
       {/* Thumbnail Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10 transition-all duration-300">
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 z-10 transition-all duration-300">
         {/* Icon with gradient background */}
-        <div className={`w-16 h-16 sm:w-20 sm:h-20 mb-4 rounded-2xl bg-gradient-to-br ${gradients[color as keyof typeof gradients]} p-4 flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300`}>
+        <div className={`w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mb-3 sm:mb-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradients[color as keyof typeof gradients]} p-3 sm:p-4 flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300`}>
           <div className="text-white transform group-hover:rotate-12 transition-transform duration-300">
             {icon}
           </div>
         </div>
 
         {/* Title */}
-        <h3 className="text-white text-lg sm:text-xl font-bold text-center mb-2 transform group-hover:-translate-y-2 transition-all duration-300">
+        <h3 className="text-white text-base sm:text-lg lg:text-xl font-bold text-center mb-1 sm:mb-2 transform group-hover:-translate-y-2 transition-all duration-300">
           {title}
         </h3>
 
-        {/* Description */}
-        <p className="text-gray-300 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 px-2">
+        {/* Description - Show on mobile tap, hover on desktop */}
+        <p className="text-gray-300 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 px-2 line-clamp-2">
           {description}
         </p>
 
         {/* Play Button Indicator */}
-        <div className="mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-          <div className="flex items-center gap-2 text-accent-blue font-semibold text-sm">
-            <Play className="w-4 h-4" fill="currentColor" />
+        <div className="mt-2 sm:mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          <div className="flex items-center gap-1.5 sm:gap-2 text-accent-blue font-semibold text-xs sm:text-sm">
+            <Play className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" />
             <span>Watch Now</span>
           </div>
         </div>
       </div>
 
-      {/* Corner decorations */}
-      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 -left-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
-      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 -left-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
-      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 -right-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
-      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 -right-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
+      {/* Corner decorations - Subtle on mobile */}
+      <Icon className="absolute h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6 -top-1.5 sm:-top-2 -left-1.5 sm:-left-2 text-white opacity-30 sm:opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6 -bottom-1.5 sm:-bottom-2 -left-1.5 sm:-left-2 text-white opacity-30 sm:opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6 -top-1.5 sm:-top-2 -right-1.5 sm:-right-2 text-white opacity-30 sm:opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-3 w-3 sm:h-4 sm:w-4 lg:h-6 lg:w-6 -bottom-1.5 sm:-bottom-2 -right-1.5 sm:-right-2 text-white opacity-30 sm:opacity-50 group-hover:opacity-100 transition-opacity" />
     </motion.div>
   );
 };
