@@ -55,9 +55,9 @@ export default function About() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Crafting Visual
+              Transforming Footage Into
               <span className="block bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">
-                Masterpieces
+                Visual Narratives
               </span>
             </motion.h2>
 
@@ -68,20 +68,18 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p>
-                I&apos;m a professional video editor specializing in <span className="text-accent-gold font-semibold">cinematic storytelling</span> and 
-                high-end post-production using <span className="text-accent-blue font-semibold">DaVinci Resolve</span>.
+                From <span className="text-accent-gold font-semibold">cinematic edits</span> to high-performance digital content, 
+                I transform raw footage into compelling visual narratives.
               </p>
               
               <p>
-                Every frame matters. My approach combines <span className="text-white font-medium">technical precision</span> with 
-                <span className="text-white font-medium"> emotional depth</span> — focusing on pacing, color grading, and transitions 
-                that elevate your content from good to unforgettable.
+                My work focuses on <span className="text-white font-medium">pacing, color science, and seamless transitions</span> — ensuring 
+                every project feels polished, immersive, and purpose-driven.
               </p>
               
               <p>
-                Whether it&apos;s a YouTube video, commercial, short film, or social media content, 
-                I bring a <span className="text-accent-gold">filmmaker&apos;s eye</span> to every project, ensuring each edit serves the story 
-                and resonates with your audience.
+                Whether it&apos;s a <span className="text-accent-blue font-semibold">YouTube film, commercial, short-form content</span>, or branded storytelling, 
+                I approach every edit with a <span className="text-accent-gold">filmmaker&apos;s mindset</span> — crafting visuals that connect, engage, and elevate your message.
               </p>
             </motion.div>
 

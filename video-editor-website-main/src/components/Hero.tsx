@@ -63,11 +63,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
-              I am Yadyansh
+              Crafting Visual Stories
             </span>
             <br />
             <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">
-              A Professional Video Editor
+              That Leave an Impact
             </span>
           </motion.h1>
 
@@ -77,7 +77,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Story telling, visual transition, precision pacing &amp; flow
+            I&apos;m a professional video editor specializing in cinematic storytelling and high-end post-production using <span className="text-accent-gold font-semibold">DaVinci Resolve</span>.
+            <br />
+            Every frame is designed with intention — blending emotion, rhythm, and precision to create visuals that truly resonate.
           </motion.p>
 
           <motion.div
