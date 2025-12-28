@@ -1,17 +1,49 @@
-# Video Editor Portfolio Website
+# 🎬 Video Editor Portfolio Website
 
-A stunning, cinematic portfolio website for video editors built with Next.js 14, TypeScript, and Tailwind CSS. Fully optimized for Vercel deployment with automatic GitHub integration.
+A stunning, cinematic portfolio website for video editors built with Next.js 14, TypeScript, and Tailwind CSS. Optimized for GitHub Pages, Vercel, and Netlify deployment.
 
-## 🚀 Features
+> **📁 Project Location:** The actual project files are in the `video-editor-website-main` directory.
 
-- **Modern Tech Stack**: Next.js 14, React 18, TypeScript
-- **Smooth Animations**: Framer Motion & GSAP
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Performance Optimized**: Image optimization, code splitting, SWC minification
-- **Production Ready**: Configured for Vercel deployment
-- **Auto-Deploy**: Automatic deployment on GitHub push
+## 🚀 Deploy to GitHub Pages (Current Setup)
 
-## 📦 Quick Start
+Your site is configured for GitHub Pages deployment! Follow these steps:
+
+### Step 1: Enable GitHub Pages
+1. Go to **Settings** → **Pages** in your repository
+2. Under **Source**, select **"GitHub Actions"**
+3. Save and you're done!
+
+### Step 2: Push and Deploy
+```bash
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin main
+```
+
+The workflow will automatically build and deploy. Check the **Actions** tab for progress.
+
+**Your site will be live at:** `https://yadyansh.github.io/video-editor-website-main2/`
+
+---
+
+## 🌐 Alternative Deployment Options
+
+### Vercel (Easiest - Recommended for Production)
+1. Go to [vercel.com](https://vercel.com) and import this repository
+2. Set **Root Directory** to: `video-editor-website-main`
+3. Deploy automatically
+4. **Important:** Comment out `basePath` in `next.config.mjs` for Vercel
+
+### Netlify
+1. Import on [netlify.com](https://netlify.com)
+2. Set **Base directory**: `video-editor-website-main`
+3. **Build command**: `npm run build`
+4. **Publish directory**: `video-editor-website-main/out`
+5. **Important:** Comment out `basePath` in `next.config.mjs` for Netlify
+
+---
+
+## 📦 Quick Start (Local Development)
 
 1. **Clone the repository**
 

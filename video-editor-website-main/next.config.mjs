@@ -20,8 +20,8 @@ const nextConfig = {
   swcMinify: true,
   // Compress output
   compress: true,
-  // Base path for GitHub Pages (comment out for other platforms)
-  // basePath: '/video-editor-website-main2',
+  // Base path for GitHub Pages
+  basePath: process.env.NODE_ENV === 'production' ? '/video-editor-website-main2' : '',
   // Trailing slash for static export
   trailingSlash: true,
 };

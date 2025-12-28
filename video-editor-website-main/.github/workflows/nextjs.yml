@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./video-editor-website-main
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,6 +29,7 @@ jobs:
         with:
           node-version: "18"
           cache: 'npm'
+          cache-dependency-path: './video-editor-website-main/package-lock.json'
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -36,7 +40,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            .next/cache
+            ./video-editor-website-main/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
@@ -50,7 +54,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./video-editor-website-main/out
 
   deploy:
     environment:
