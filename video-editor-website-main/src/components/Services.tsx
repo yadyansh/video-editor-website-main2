@@ -124,7 +124,7 @@ export default function Services() {
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-8 py-4 bg-gradient-to-r from-accent-blue to-accent-blue/80 hover:from-accent-blue/90 hover:to-accent-blue/70 text-white rounded-full font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(74,158,255,0.5)]"
           >
-            Let's Discuss Your Project
+            Let&apos;s Discuss Your Project
           </button>
         </motion.div>
       </div>

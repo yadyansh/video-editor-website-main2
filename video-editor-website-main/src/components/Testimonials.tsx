@@ -84,7 +84,7 @@ export default function Testimonials() {
             Client <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Testimonials</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Don't just take my word for it — hear from satisfied clients who trusted me with their vision
+            Don&apos;t just take my word for it — hear from satisfied clients who trusted me with their vision
           </p>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function Testimonials() {
             {/* Main Testimonial Card */}
             <div className="bg-cinematic-dark border border-cinematic-light rounded-3xl p-12 relative overflow-hidden">
               {/* Decorative Quote */}
-              <div className="absolute top-8 right-8 text-8xl text-accent-blue/10 font-serif">"</div>
+              <div className="absolute top-8 right-8 text-8xl text-accent-blue/10 font-serif">&quot;</div>
 
               {/* Rating */}
               <div className="flex gap-1 mb-6">

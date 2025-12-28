@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -18,10 +20,10 @@ const nextConfig = {
   swcMinify: true,
   // Compress output
   compress: true,
-  // Power up with Vercel Analytics
-  experimental: {
-    optimizeCss: true,
-  },
+  // Base path for GitHub Pages (comment out for other platforms)
+  // basePath: '/video-editor-website-main2',
+  // Trailing slash for static export
+  trailingSlash: true,
 };
 
 export default nextConfig;

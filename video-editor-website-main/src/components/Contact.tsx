@@ -141,7 +141,7 @@ export default function Contact() {
             Start Your <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Project</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to bring your vision to life? Let's discuss your project and create something amazing together.
+            Ready to bring your vision to life? Let&apos;s discuss your project and create something amazing together.
           </p>
         </motion.div>
 
@@ -282,7 +282,7 @@ export default function Contact() {
               <CheckCircle2 className="w-20 h-20 text-accent-blue mx-auto mb-6" />
               <h3 className="text-3xl font-bold mb-4">Message Sent!</h3>
               <p className="text-gray-400 text-lg">
-                Thank you for reaching out. I'll review your project details and get back to you within 24 hours.
+                Thank you for reaching out. I&apos;ll review your project details and get back to you within 24 hours.
               </p>
             </motion.div>
           )}

@@ -68,7 +68,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p>
-                I'm a professional video editor specializing in <span className="text-accent-gold font-semibold">cinematic storytelling</span> and 
+                I&apos;m a professional video editor specializing in <span className="text-accent-gold font-semibold">cinematic storytelling</span> and 
                 high-end post-production using <span className="text-accent-blue font-semibold">DaVinci Resolve</span>.
               </p>
               
@@ -79,8 +79,8 @@ export default function About() {
               </p>
               
               <p>
-                Whether it's a YouTube video, commercial, short film, or social media content, 
-                I bring a <span className="text-accent-gold">filmmaker's eye</span> to every project, ensuring each edit serves the story 
+                Whether it&apos;s a YouTube video, commercial, short film, or social media content, 
+                I bring a <span className="text-accent-gold">filmmaker&apos;s eye</span> to every project, ensuring each edit serves the story 
                 and resonates with your audience.
               </p>
             </motion.div>
