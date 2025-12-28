@@ -2,16 +2,41 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
-import { Film, Video, Scissors, X } from "lucide-react";
+import { Film, Video, Scissors, X, Play } from "lucide-react";
 
 const projectVideos = [
-  { title: "Saksham - YouTube Video", video: "/videos/saksham.mp4" },
-  { title: "Swift Desk - Commercial", video: "/videos/swift-desk.mp4" },
-  { title: "Task 12 - Short Film", video: "/videos/task12.mp4" },
+  { 
+    title: "Saksham", 
+    video: "/videos/saksham.mp4",
+    description: "Professional YouTube content with engaging edits",
+    color: "emerald",
+    icon: <Film className="h-10 w-10" />
+  },
+  { 
+    title: "Swift Desk", 
+    video: "/videos/swift-desk.mp4",
+    description: "Product commercial with dynamic transitions",
+    color: "pink",
+    icon: <Video className="h-10 w-10" />
+  },
+  { 
+    title: "Task 12", 
+    video: "/videos/task12.mp4",
+    description: "Cinematic short film with color grading",
+    color: "sky",
+    icon: <Scissors className="h-10 w-10" />
+  },
+  { 
+    title: "Day 1 Editor", 
+    video: "/videos/day1-editor.mp4",
+    description: "Editing showcase reel with various styles",
+    color: "purple",
+    icon: <Play className="h-10 w-10" />
+  },
 ];
 
 export default function CanvasProjects() {
-  const [selectedVideo, setSelectedVideo] = useState<{ title: string; video: string } | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{ title: string; video: string; description: string } | null>(null);
 
   return (
     <section id="canvas-projects" className="py-12 sm:py-16 md:py-20 bg-cinematic-black">
@@ -26,48 +51,42 @@ export default function CanvasProjects() {
             My <span className="bg-gradient-to-r from-accent-blue to-accent-gold bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4">
-            <span className="hidden sm:inline">Hover over</span><span className="sm:hidden">Tap</span> each card to see the magic
+            <span className="hidden sm:inline">Click on</span><span className="sm:hidden">Tap</span> any card to watch the full video
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-4 sm:gap-6">
-          <Card 
-            title="Saksham - YouTube Video" 
-            icon={<Film className="h-10 w-10" />}
-            onClick={() => setSelectedVideo(projectVideos[0])}
-          >
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-emerald-900"
-            />
-          </Card>
-          <Card 
-            title="Swift Desk - Commercial" 
-            icon={<Video className="h-10 w-10" />}
-            onClick={() => setSelectedVideo(projectVideos[1])}
-          >
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-black"
-              colors={[
-                [236, 72, 153],
-                [232, 121, 249],
-              ]}
-              dotSize={2}
-            />
-            <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
-          </Card>
-          <Card 
-            title="Task 12 - Short Film" 
-            icon={<Scissors className="h-10 w-10" />}
-            onClick={() => setSelectedVideo(projectVideos[2])}
-          >
-            <CanvasRevealEffect
-              animationSpeed={3}
-              containerClassName="bg-sky-600"
-              colors={[[125, 211, 252]]}
-            />
-          </Card>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {projectVideos.map((project, index) => (
+            <Card 
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              color={project.color}
+              icon={project.icon}
+              onClick={() => setSelectedVideo(project)}
+              index={index}
+            >
+              <CanvasRevealEffect
+                animationSpeed={3}
+                containerClassName={
+                  project.color === "emerald" ? "bg-emerald-900" :
+                  project.color === "pink" ? "bg-black" :
+                  project.color === "sky" ? "bg-sky-600" :
+                  "bg-purple-900"
+                }
+                colors={
+                  project.color === "pink" ? [[236, 72, 153], [232, 121, 249]] :
+                  project.color === "sky" ? [[125, 211, 252]] :
+                  project.color === "purple" ? [[168, 85, 247], [147, 51, 234]] :
+                  undefined
+                }
+                dotSize={2}
+              />
+              {project.color === "pink" && (
+                <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+              )}
+            </Card>
+          ))}
         </div>
 
         {/* Video Modal */}
@@ -77,30 +96,35 @@ export default function CanvasProjects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md"
               onClick={() => setSelectedVideo(null)}
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="relative w-full max-w-4xl"
+                className="relative w-full max-w-5xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={() => setSelectedVideo(null)}
-                  className="absolute -top-12 right-0 text-white hover:text-accent-blue transition-colors"
+                  className="absolute -top-12 right-0 text-white hover:text-accent-blue transition-colors z-10"
                   aria-label="Close video"
                 >
                   <X className="w-8 h-8" />
                 </button>
-                <h3 className="text-white text-2xl font-bold mb-4">{selectedVideo.title}</h3>
-                <video
-                  src={selectedVideo.video}
-                  controls
-                  autoPlay
-                  className="w-full rounded-lg"
-                />
+                <div className="bg-cinematic-dark rounded-2xl overflow-hidden border-2 border-accent-blue/30">
+                  <div className="p-4 sm:p-6 border-b border-cinematic-light">
+                    <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">{selectedVideo.title}</h3>
+                    <p className="text-gray-400 text-sm sm:text-base">{selectedVideo.description}</p>
+                  </div>
+                  <video
+                    src={selectedVideo.video}
+                    controls
+                    autoPlay
+                    className="w-full aspect-video bg-black"
+                  />
+                </div>
               </motion.div>
             </motion.div>
           )}
@@ -112,50 +136,89 @@ export default function CanvasProjects() {
 
 const Card = ({
   title,
+  description,
+  color,
   icon,
   children,
   onClick,
+  index,
 }: {
   title: string;
+  description: string;
+  color: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   onClick?: () => void;
+  index: number;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  
+  const gradients = {
+    emerald: "from-emerald-500 to-teal-500",
+    pink: "from-pink-500 to-purple-500",
+    sky: "from-sky-500 to-cyan-500",
+    purple: "from-purple-500 to-indigo-500",
+  };
+
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
       onTouchStart={() => setHovered(true)}
-      className="border border-white/[0.2] group/canvas-card flex items-center justify-center max-w-sm w-full mx-auto p-4 relative h-[20rem] sm:h-[25rem] md:h-[30rem] cursor-pointer"
+      className="group border-2 border-white/[0.2] hover:border-accent-blue/50 rounded-2xl flex flex-col relative h-[280px] sm:h-[300px] cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-accent-blue/20"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
-      
+      {/* Background Canvas Effect */}
       <AnimatePresence>
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            exit={{ opacity: 0 }}
+            className="absolute inset-0"
           >
             {children}
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center text-white">
-          {icon}
+      {/* Thumbnail Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10 transition-all duration-300">
+        {/* Icon with gradient background */}
+        <div className={`w-16 h-16 sm:w-20 sm:h-20 mb-4 rounded-2xl bg-gradient-to-br ${gradients[color as keyof typeof gradients]} p-4 flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300`}>
+          <div className="text-white transform group-hover:rotate-12 transition-transform duration-300">
+            {icon}
+          </div>
         </div>
-        <h2 className="text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4 font-bold group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+
+        {/* Title */}
+        <h3 className="text-white text-lg sm:text-xl font-bold text-center mb-2 transform group-hover:-translate-y-2 transition-all duration-300">
           {title}
-        </h2>
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-300 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 px-2">
+          {description}
+        </p>
+
+        {/* Play Button Indicator */}
+        <div className="mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+          <div className="flex items-center gap-2 text-accent-blue font-semibold text-sm">
+            <Play className="w-4 h-4" fill="currentColor" />
+            <span>Watch Now</span>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Corner decorations */}
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 -left-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 -left-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 -right-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 -right-2 text-white opacity-50 group-hover:opacity-100 transition-opacity" />
+    </motion.div>
   );
 };
 

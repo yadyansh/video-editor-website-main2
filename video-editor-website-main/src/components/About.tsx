@@ -2,11 +2,21 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Play, Volume2, VolumeX } from "lucide-react";
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-dark relative overflow-hidden">
@@ -15,32 +25,55 @@ export default function About() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Image Side */}
+          {/* Video Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden relative group">
-              {/* Placeholder Image - Replace with actual editor photo */}
-              <div className="w-full h-full bg-gradient-to-br from-cinematic-gray to-cinematic-light flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-accent-blue/20 flex items-center justify-center">
-                    <svg className="w-16 h-16 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-500 text-sm">Your Professional Photo Here</p>
-                </div>
+            <div className="aspect-square rounded-2xl overflow-hidden relative group shadow-2xl border-2 border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
+              {/* Video */}
+              <video
+                ref={videoRef}
+                src="/videos/day1-editor.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Video Overlay with Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-cinematic-black/80 via-transparent to-cinematic-black/40 opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+              
+              {/* Mute Toggle Button */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-4 right-4 z-20 bg-cinematic-dark/80 hover:bg-accent-blue/90 backdrop-blur-sm p-3 rounded-full transition-all duration-300 border border-white/20 hover:border-accent-blue shadow-lg hover:scale-110 group/btn"
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-5 h-5 text-white group-hover/btn:text-white" />
+                ) : (
+                  <Volume2 className="w-5 h-5 text-white group-hover/btn:text-white" />
+                )}
+              </button>
+
+              {/* Play Indicator Badge */}
+              <div className="absolute top-4 left-4 z-20 bg-accent-blue/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 shadow-lg border border-white/20">
+                <Play className="w-4 h-4 text-white fill-white animate-pulse" />
+                <span className="text-white text-sm font-semibold">Showcase Reel</span>
               </div>
               
               {/* Glow Effect on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/30 to-accent-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
             </div>
             
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-accent-gold/10 rounded-full blur-3xl" />
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-accent-gold/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent-blue/20 rounded-full blur-3xl" />
           </motion.div>
 
           {/* Content Side */}
