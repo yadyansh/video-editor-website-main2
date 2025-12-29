@@ -1,5 +1,4 @@
 import LampHero from "@/components/LampHero";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Features from "@/components/Features";
 import Skills from "@/components/Skills";
@@ -13,7 +12,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <LampHero />
-      <Stats />
       <About />
       <Features />
       <Skills />

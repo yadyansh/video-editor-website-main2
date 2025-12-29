@@ -20,7 +20,7 @@ export default function LampHero() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 text-center px-4"
+        className="mt-8 text-center px-4 pb-32 sm:pb-40 md:pb-48 lg:pb-56"
       >
         <h1 className="bg-gradient-to-br from-slate-50 to-slate-300 py-4 bg-clip-text text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-transparent mb-4 sm:mb-6 leading-tight">
           Video Editing <br /> That Works
@@ -49,6 +49,9 @@ export default function LampHero() {
             Get in Touch
           </motion.button>
         </div>
+        
+        {/* Extended Light Glow Below */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-b from-pink-500/10 via-pink-500/5 to-transparent blur-3xl pointer-events-none" />
       </motion.div>
     </LampContainer>
   );
