@@ -31,7 +31,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-cinematic-black">
+    <section className="py-8 sm:py-10 md:py-12 bg-cinematic-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

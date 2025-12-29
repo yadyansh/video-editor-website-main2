@@ -5,7 +5,7 @@ import { Film, Scissors, Palette, Music, Zap, Image as ImageIcon } from "lucide-
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-12 sm:py-16 md:py-24 bg-black">
+    <section id="skills" className="py-8 sm:py-10 md:py-12 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight text-white">

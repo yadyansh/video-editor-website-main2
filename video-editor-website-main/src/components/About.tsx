@@ -15,7 +15,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-dark relative overflow-hidden">
+    <section id="about" className="py-8 sm:py-12 md:py-16 bg-cinematic-dark relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent-blue/5 to-transparent" />
       
