@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Play, Volume2, VolumeX } from "lucide-react";
 
 export default function About() {
@@ -26,6 +26,18 @@ export default function About() {
     }
   };
 
+  useEffect(() => {
+    // Force play when component mounts
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play().catch((error) => {
+          console.log("Video autoplay prevented:", error);
+        });
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section id="about" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cinematic-dark relative overflow-hidden">
       {/* Background Accent */}
@@ -43,6 +55,7 @@ export default function About() {
             <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30 hover:border-accent-blue/60 transition-all duration-500">
               {/* Video */}
               <video
+                key="day1-editor-video"
                 ref={videoRef}
                 src="/videos/day1-editor.mp4"
                 autoPlay
