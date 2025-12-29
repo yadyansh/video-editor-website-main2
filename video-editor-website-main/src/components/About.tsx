@@ -3,16 +3,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Play, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  // Replace with your actual Google Drive or video hosting link
-  const handleVideoClick = () => {
-    window.open("https://drive.google.com/file/d/YOUR_VIDEO_ID/view", "_blank");
-  };
 
   return (
     <section id="about" className="py-8 sm:py-12 md:py-16 bg-cinematic-dark relative overflow-hidden">
@@ -21,44 +16,27 @@ export default function About() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         <div ref={ref} className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-          {/* Video Side */}
+          {/* Profile Photo */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="relative max-w-md lg:max-w-none mx-auto lg:mx-0"
           >
-            <div 
-              onClick={handleVideoClick}
-              className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30 hover:border-accent-blue transition-all duration-500 cursor-pointer"
-            >
-              {/* Video Thumbnail/Placeholder */}
-              <div className="w-full h-full bg-gradient-to-br from-cinematic-gray to-cinematic-dark flex items-center justify-center relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-cinematic-black/80 via-transparent to-cinematic-black/40" />
-                
-                {/* Play Button */}
-                <div className="relative z-10 flex flex-col items-center gap-4 transform group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-accent-blue/90 flex items-center justify-center shadow-2xl group-hover:bg-accent-blue transition-colors">
-                    <Play className="w-10 h-10 sm:w-12 sm:h-12 text-white fill-white ml-1" />
-                  </div>
-                  <div className="text-white font-semibold text-base sm:text-lg flex items-center gap-2">
-                    <span>Watch Showcase Reel</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
+            <div className="aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden relative group shadow-2xl border border-accent-blue/30">
+              <Image
+                src="/profile.jpg"
+                alt="Yadyansh - Video Editor"
+                fill
+                className="object-cover"
+                priority
+              />
               
-              {/* Badge */}
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 bg-accent-blue/90 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 shadow-lg border border-white/20">
-                <Play className="w-3 h-3 sm:w-4 sm:h-4 text-white fill-white" />
-                <span className="text-white text-xs sm:text-sm font-semibold">Click to Play</span>
-              </div>
-              
-              {/* Glow Effect on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-accent-blue/30 to-accent-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay" />
+              {/* Subtle Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-cinematic-black/40 via-transparent to-transparent" />
             </div>
             
-            {/* Decorative Elements - Hidden on small mobile, subtle on larger screens */}
+            {/* Decorative Elements */}
             <div className="hidden sm:block absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 w-24 h-24 sm:w-40 sm:h-40 bg-accent-gold/20 rounded-full blur-2xl sm:blur-3xl animate-pulse" />
             <div className="hidden sm:block absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-20 h-20 sm:w-32 sm:h-32 bg-accent-blue/20 rounded-full blur-2xl sm:blur-3xl" />
           </motion.div>

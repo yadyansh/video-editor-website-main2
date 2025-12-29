@@ -1,35 +1,44 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
-import { Film, Video, Scissors, X, Play } from "lucide-react";
+import { Film, Video, Play, Scissors, ExternalLink } from "lucide-react";
 
 const projectVideos = [
   { 
-    title: "Saksham", 
-    video: "/videos/saksham.mp4",
-    description: "Professional YouTube content with engaging edits",
+    title: "Project 1", 
+    videoUrl: "https://drive.google.com/file/d/1ug29Eib9NnXrKsWVAuigSrG7tcyvnkGC/view",
+    description: "Professional video editing showcase",
     color: "emerald",
     icon: <Film className="h-10 w-10" />
   },
   { 
-    title: "Swift Desk", 
-    video: "/videos/swift-desk.mp4",
-    description: "Product commercial with dynamic transitions",
+    title: "Project 2", 
+    videoUrl: "https://drive.google.com/file/d/1lJV9u-8kaeRMtKjP49Nmf1AHXNh8pwDo/view",
+    description: "Dynamic content creation",
     color: "pink",
     icon: <Video className="h-10 w-10" />
   },
   { 
-    title: "Day 1 Editor", 
-    video: "/videos/day1-editor.mp4",
-    description: "Editing showcase reel with various styles",
+    title: "Project 3", 
+    videoUrl: "https://drive.google.com/file/d/1hMDXdOGy4v9FfCZLGj2oqobCzsUDmSz5/view",
+    description: "Creative editing techniques",
     color: "purple",
     icon: <Play className="h-10 w-10" />
+  },
+  { 
+    title: "Project 4", 
+    videoUrl: "https://drive.google.com/file/d/1g2n0vboLA5QG-udL-kmoFyRjdhv4HAun/view",
+    description: "Cinematic storytelling",
+    color: "sky",
+    icon: <Scissors className="h-10 w-10" />
   },
 ];
 
 export default function CanvasProjects() {
-  const [selectedVideo, setSelectedVideo] = useState<{ title: string; video: string; description: string } | null>(null);
+  const handleProjectClick = (url: string) => {
+    window.open(url, "_blank");
+  };
 
   return (
     <section id="canvas-projects" className="py-8 sm:py-10 md:py-12 bg-cinematic-black">
@@ -48,7 +57,7 @@ export default function CanvasProjects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-sm sm:max-w-none mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 max-w-sm sm:max-w-none mx-auto">
           {projectVideos.map((project, index) => (
             <Card 
               key={project.title}
@@ -56,7 +65,7 @@ export default function CanvasProjects() {
               description={project.description}
               color={project.color}
               icon={project.icon}
-              onClick={() => setSelectedVideo(project)}
+              onClick={() => handleProjectClick(project.videoUrl)}
               index={index}
             >
               <CanvasRevealEffect
@@ -78,51 +87,7 @@ export default function CanvasProjects() {
               {project.color === "pink" && (
                 <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
               )}
-            </Card>
-          ))}
         </div>
-
-        {/* Video Modal */}
-        <AnimatePresence>
-          {selectedVideo && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/95 backdrop-blur-md"
-              onClick={() => setSelectedVideo(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="relative w-full max-w-5xl"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button
-                  onClick={() => setSelectedVideo(null)}
-                  className="absolute -top-10 sm:-top-12 right-0 text-white hover:text-accent-blue active:text-accent-blue transition-colors z-10 p-2 rounded-full bg-cinematic-dark/50 sm:bg-transparent"
-                  aria-label="Close video"
-                >
-                  <X className="w-6 h-6 sm:w-8 sm:h-8" />
-                </button>
-                <div className="bg-cinematic-dark rounded-xl sm:rounded-2xl overflow-hidden border border-accent-blue/30">
-                  <div className="p-3 sm:p-4 md:p-6 border-b border-cinematic-light">
-                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">{selectedVideo.title}</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm md:text-base line-clamp-2">{selectedVideo.description}</p>
-                  </div>
-                  <video
-                    src={selectedVideo.video}
-                    controls
-                    autoPlay
-                    playsInline
-                    className="w-full aspect-video bg-black"
-                  />
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );
