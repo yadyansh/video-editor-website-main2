@@ -57,7 +57,7 @@ export default function About() {
               <video
                 key="day1-editor-video"
                 ref={videoRef}
-                src="/video-editor-website-main2/videos/day1-editor.mp4"
+                src="/videos/day1-editor.mp4"
                 autoPlay
                 loop
                 muted

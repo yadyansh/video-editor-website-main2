@@ -7,21 +7,21 @@ import { Film, Video, Scissors, X, Play } from "lucide-react";
 const projectVideos = [
   { 
     title: "Saksham", 
-    video: "/video-editor-website-main2/videos/saksham.mp4",
+    video: "/videos/saksham.mp4",
     description: "Professional YouTube content with engaging edits",
     color: "emerald",
     icon: <Film className="h-10 w-10" />
   },
   { 
     title: "Swift Desk", 
-    video: "/video-editor-website-main2/videos/swift-desk.mp4",
+    video: "/videos/swift-desk.mp4",
     description: "Product commercial with dynamic transitions",
     color: "pink",
     icon: <Video className="h-10 w-10" />
   },
   { 
     title: "Day 1 Editor", 
-    video: "/video-editor-website-main2/videos/day1-editor.mp4",
+    video: "/videos/day1-editor.mp4",
     description: "Editing showcase reel with various styles",
     color: "purple",
     icon: <Play className="h-10 w-10" />
