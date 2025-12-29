@@ -201,8 +201,8 @@ const Card = ({
         {/* Play Button Indicator */}
         <div className="mt-2 sm:mt-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
           <div className="flex items-center gap-1.5 sm:gap-2 text-accent-blue font-semibold text-xs sm:text-sm">
-            <Play className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" />
-            <span>Watch Now</span>
+            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span>Watch Video</span>
           </div>
         </div>
       </div>
