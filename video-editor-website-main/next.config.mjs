@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Removed 'output: export' - now using Node.js server mode
   images: {
-    unoptimized: true,
+    // Re-enabled image optimization with Node.js server
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,10 +20,6 @@ const nextConfig = {
   swcMinify: true,
   // Compress output
   compress: true,
-  // Base path for GitHub Pages
-  basePath: process.env.NODE_ENV === 'production' ? '/video-editor-website-main2' : '',
-  // Trailing slash for static export
-  trailingSlash: true,
 };
 
 export default nextConfig;
